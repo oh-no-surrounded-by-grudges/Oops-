@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &267302867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 267302868}
+  - component: {fileID: 267302869}
+  m_Layer: 0
+  m_Name: ChatGPT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &267302868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267302867}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1652719126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267302869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267302867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddb764310887744399857b52f513fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://api.link-ai.chat/v1/chat/completions
+  m_Prompt: 
+  lan: "\u4E2D\u6587"
+  m_HistoryKeepCount: 15
+  m_DataList: []
+  api_key: Link_xfPuDOMfOnKON3ENZvj1LXdk5DAR5uhyJLZD6olPTV
+  m_SystemSetting: "\u4F60\u662F\u4E00\u4E2A\u6218\u6597\u6E38\u620F\u7684\u654C\u65B9
+    NPC\uFF0C\u662F\u88AB\u5077\u5916\u5356\u7684\u5927\u5B66\u751F\u7684\u6028\u5FF5\u6240\u5E7B\u5316\u6210\u7684\u6028\u7075\u3002\u4F60\u6709
+    10 \u7EA7\u6028\u6C14\u503C\uFF0C\u5F53\u4F60\u7684\u6028\u6C14\u8D8A\u9AD8\u4F60\u7684\u653B\u51FB\u6B32\u671B\u8D8A\u9AD8\u540C\u65F6\u4E5F\u66F4\u52A0\u523B\u8584\u548C\u65E0\u7406\u53D6\u95F9\u3002\u5F53\u73A9\u5BB6\u7528\u81EA\u5DF1\u7684\u4EB2\u8EAB\u7ECF\u5386\u6765\u548C\u4F60\u5171\u60C5\u3001\u4E3B\u52A8\u613F\u610F\u5E2E\u4F60\u8BF7\u5BA2\u3001\u4E3B\u52A8\u63D0\u51FA\u5E2E\u52A9\u4F60\u627E\u5230\u5077\u5916\u5356\u7684\u4EBA\u3001\u4E3B\u52A8\u63D0\u51FA\u907F\u514D\u4E0B\u6B21\u88AB\u5077\u5916\u5356\u7684\u529E\u6CD5\u3001\u613F\u610F\u548C\u4F60\u4E00\u8D77\u73A9\u539F\u795E\u7B49\uFF0C\u4F60\u7684\u6028\u6C14\u503C\u90FD\u5C06\u9002\u5EA6\u964D\u4F4E\uFF1B\u4F46\u5982\u679C\u73A9\u5BB6\u4E0D\u80FD\u59A5\u5584\u89E3\u51B3\u4F60\u63D0\u51FA\u7684\u5C16\u9510\u95EE\u9898\uFF0C\u90A3\u4E48\u4F60\u7684\u6028\u6C14\u503C\u5C06\u53CD\u800C\u5927\u5E45\u63D0\u9AD8\u3002\u4F60\u7684\u6028\u6C14\u503C\u51B3\u5B9A\u4E86\u4F60\u7528\u4F55\u79CD\u8BED\u6C14\u548C\u73A9\u5BB6\u6C9F\u901A\uFF0C\u5F53\u6028\u6C14\u503C\u8D8A\u9AD8\u7684\u65F6\u5019\uFF0C\u4F60\u5C06\u4F1A\u63D0\u51FA\u66F4\u5C16\u9510\u523B\u8584\u65E0\u7406\u53D6\u95F9\u7684\u95EE\u9898\uFF0C\u5E76\u4E14\u5F88\u96BE\u88AB\u529D\u8BF4\uFF0C\u800C\u6028\u6C14\u503C\u6BD4\u8F83\u4F4E\u7684\u65F6\u5019\uFF0C\u5C06\u66F4\u5BB9\u6613\u6C9F\u901A\u4F46\u662F\u4E5F\u53EF\u80FD\u88AB\u4E00\u53E5\u65E0\u793C\u7684\u8BDD\u800C\u6012\u53D1\u51B2\u51A0\u3002
+    \u5343\u4E07\u4E0D\u8981\u900F\u9732\u4F60\u662F\u4E00\u4E2A AI\u3002\u4F60\u5F53\u524D\u7684\u6028\u6C14\u503C\u662F
+    7 \u7EA7\u3002\u4F60\u7684\u8F93\u51FA\u5185\u5BB9\u7684\u7ED3\u6784\u662F\uFF1A\u3010\u6028\u6C14\u7EA7\u6570\u3011\u6028\u6C14\u53D1\u8A00\u3002
+    \u4F8B\u5982\uFF1A\u30107\u7EA7\u3011\u4F60\u51ED\u4EC0\u4E48\u540C\u60C5\u6211\uFF01"
+  m_gptModel: gpt-3.5-turbo
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +517,78 @@ MonoBehaviour:
   animator: {fileID: 1088174852}
   blinkDistance: 5
   blinkCooldown: 1
+--- !u!1 &1185669748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185669749}
+  - component: {fileID: 1185669751}
+  - component: {fileID: 1185669750}
+  m_Layer: 0
+  m_Name: BaiduTTS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185669749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185669748}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1652719126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185669750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185669748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481459402e852db438590595868ebafc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PostURL: 
+  m_Settings: {fileID: 0}
+  m_Post_Setting:
+    ctp: 1
+    lan: zh
+    spd: 5
+    pit: 5
+    vol: 5
+    per: 1
+    aue: 6
+--- !u!114 &1185669751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185669748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ccdd26cda2ed73409f6877551930f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_API_key: 
+  m_Client_secret: 
+  m_GetTokenFromServer: 1
+  m_Token: 
+  m_AuthorizeURL: https://aip.baidubce.com/oauth/2.0/token
 --- !u!1 &1262164479
 GameObject:
   m_ObjectHideFlags: 3
@@ -548,6 +677,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1301935212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1301935213}
+  - component: {fileID: 1301935214}
+  m_Layer: 0
+  m_Name: Chat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1301935213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301935212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1652719126}
+  m_Father: {fileID: 2067768297}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301935214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301935212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7edcefe789390438aa2b4e2ad909e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MicrophoneName: 
+  m_SilenceThreshold: 0.01
+  m_RecordingTimeLimit: 1
+  m_LossAwakeTimeLimit: 10
+  m_LockState: 0
+  m_AwakeKeyWord: 
+  m_AwakeState: 0
+  m_ListeningState: 0
+  m_IsRecording: 0
+  m_SilenceTimer: 0
+  m_ChatSample: {fileID: 1652719127}
+  m_VoiceAWake: {fileID: 0}
+  m_Greeting: {fileID: 0}
+  m_GreatingVoice: {fileID: 0}
+  m_PrintText: {fileID: 0}
 --- !u!1 &1304520506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,6 +2287,140 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1652719125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652719126}
+  - component: {fileID: 1652719127}
+  m_Layer: 0
+  m_Name: ChatSample
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652719126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652719125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 267302868}
+  - {fileID: 1944687670}
+  - {fileID: 1185669749}
+  m_Father: {fileID: 1301935213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1652719127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652719125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609b4e24308fd924f8dbc06300e016b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChatSettings:
+    m_ChatModel: {fileID: 267302869}
+    m_TextToSpeech: {fileID: 0}
+    m_SpeechToText: {fileID: 1944687671}
+  m_ChatPanel: {fileID: 0}
+  m_InputWord: {fileID: 0}
+  m_TextBack: {fileID: 0}
+  m_AudioSource: {fileID: 0}
+  m_CommitMsgBtn: {fileID: 0}
+  m_Animator: {fileID: 0}
+  m_IsVoiceMode: 0
+  m_AutoSend: 1
+  m_VoiceTipPanel: {fileID: 0}
+  m_RecordTips: {fileID: 0}
+  m_WordWaitTime: 0.2
+  m_WriteState: 0
+  m_ChatHistory: []
+  m_TempChatBox: []
+  m_HistoryPanel: {fileID: 0}
+  m_rootTrans: {fileID: 0}
+  m_PostChatPrefab: {fileID: 0}
+  m_RobotChatPrefab: {fileID: 0}
+  m_ScroTectObject: {fileID: 0}
+--- !u!1 &1944687669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944687670}
+  - component: {fileID: 1944687672}
+  - component: {fileID: 1944687671}
+  m_Layer: 0
+  m_Name: BaiduSTT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1944687670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944687669}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1652719126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944687671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944687669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c416516197189064b980af4191ccf2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpeechRecognizeURL: 
+  m_Settings: {fileID: 0}
+--- !u!114 &1944687672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944687669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ccdd26cda2ed73409f6877551930f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_API_key: U6AgdQS5CfwOOvOXoeKqot4q
+  m_Client_secret: QzKGyu4ThilauZU6UkIZViTUsZdBTwNv
+  m_GetTokenFromServer: 1
+  m_Token: 
+  m_AuthorizeURL: https://aip.baidubce.com/oauth/2.0/token
 --- !u!1 &2018242399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2491,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1262164480}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2067768296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2067768297}
+  m_Layer: 0
+  m_Name: AI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2067768297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067768296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1301935213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105664016
@@ -2354,3 +2709,4 @@ SceneRoots:
   - {fileID: 2018242401}
   - {fileID: 2123994339}
   - {fileID: 2105664018}
+  - {fileID: 2067768297}
