@@ -728,7 +728,7 @@ MonoBehaviour:
   m_LossAwakeTimeLimit: 10
   m_LockState: 0
   m_AwakeKeyWord: 
-  m_AwakeState: 1
+  m_AwakeState: 0
   m_ListeningState: 0
   m_IsRecording: 0
   m_SilenceTimer: 0

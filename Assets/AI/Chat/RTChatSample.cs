@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -45,6 +46,15 @@ public class RTChatSample : MonoBehaviour
     /// </summary>
     [Header("设置是否通过语音合成播放文本")]
     [SerializeField] private bool m_IsVoiceMode = true;
+
+    /// <summary>
+    /// 怨气值
+    /// </summary>
+    public int m_CurrentHatred = 7;
+    /// <summary>
+    /// 怨气回复
+    /// </summary>
+    public string m_HatredResponse = "";
     /// <summary>
     /// AI回复结束之后，回调
     /// </summary>
@@ -135,6 +145,7 @@ public class RTChatSample : MonoBehaviour
 
 
         Debug.Log("收到AI回复：" + _response);
+        ProcessResponse(_response);
 
         //记录聊天
         m_ChatHistory.Add(_response);
@@ -150,6 +161,30 @@ public class RTChatSample : MonoBehaviour
         if (m_ChatSettings.m_TextToSpeech) {
             m_ChatSettings.m_TextToSpeech.Speak(_response, PlayVoice);
         }
+    }
+
+    /// <summary>
+    /// 处理返回的信息，获得当前的怨气值和怨气回复
+    /// </summary>
+    /// <param name="_response"></param>
+    private void ProcessResponse(string text)
+    {
+        // 定义正则表达式以匹配【数字级】文本
+        var regex = new Regex(@"【(\d+)级】(.*)");
+
+        // 使用正则表达式匹配文本
+        var match = regex.Match(text);
+
+        // 检查匹配是否成功
+        if (match.Success)
+        {
+            // 提取并转换数字部分
+            m_CurrentHatred = int.Parse(match.Groups[1].Value);
+
+            // 提取文本部分
+            m_HatredResponse = match.Groups[2].Value.Trim();
+        }
+        
     }
 
     #endregion

@@ -183,6 +183,34 @@ public class RTSpeechHandler : MonoBehaviour
   
         }
     }
+
+    /// <summary>
+    /// 【公开接口】开启对话
+    /// </summary>
+    public void StartConversation() {
+        m_AwakeState = true;
+    }
+
+    /// <summary>
+    /// 【公开接口】中止对话
+    /// </summary>
+    public void StopConversation() {
+        m_AwakeState = false;
+    }
+
+    /// <summary>
+    /// 【公开接口】获得怨气值
+    /// </summary>
+    public int GetCurrentHatred() {
+        return m_ChatSample.m_CurrentHatred;
+    }
+
+    /// <summary>
+    /// 【公开接口】获得怨气反馈
+    /// </summary>
+    public string GetHatredResponse() {
+        return m_ChatSample.m_HatredResponse;
+    }
     
     [SerializeField]private AudioSource m_Greeting;
     [SerializeField] private AudioClip m_GreatingVoice;
