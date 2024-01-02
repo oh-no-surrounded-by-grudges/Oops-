@@ -1,4 +1,0 @@
-repository "2d_test@org_test1@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
