@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1088174852}
-  blinkDistance: 0.5
+  blinkDistance: 5
   blinkCooldown: 1
 --- !u!1 &1262164479
 GameObject:
