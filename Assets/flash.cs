@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlinkMovement : MonoBehaviour
 {
     public Animator animator; // 确保在Unity编辑器中将你的角色的Animator组件拖拽到这个字段上
-    public float blinkDistance = 0.5f; // 闪现距离
+    public float blinkDistance = 5f; // 闪现距离
     public float blinkCooldown = 1f;
     private float lastBlinkTime = -Mathf.Infinity;
     private bool isflashing;
