@@ -13,7 +13,7 @@ public class BlinkMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time - lastBlinkTime >=blinkCooldown && !isflashing) // 检测是否按下空格键
+        if (Input.GetKeyDown(KeyCode.Space) && (Input.GetAxisRaw("Horizontal")!=0 || Input.GetAxisRaw("Vertical")!=0) && Time.time - lastBlinkTime >=blinkCooldown && !isflashing) // 检测是否按下空格键
         {
             flash();
             lastBlinkTime = Time.time; // 更新上次闪现时间
