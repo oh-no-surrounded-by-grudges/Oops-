@@ -174,7 +174,7 @@ public class RTChatSample : MonoBehaviour
     private void ProcessResponse(string text)
     {
         // 定义正则表达式以匹配【数字级】文本
-        var regex = new Regex(@"【(\d+)级】(.*)");
+        var regex = new Regex(@"【(\d+)级.*】(.*)");
 
         // 使用正则表达式匹配文本
         var match = regex.Match(text);
