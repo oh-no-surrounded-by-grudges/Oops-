@@ -10,10 +10,15 @@ public class BlinkMovement : MonoBehaviour
     private float lastBlinkTime = -Mathf.Infinity;
     private bool isflashing;
 
+    private float moveX; //control horizontal movement  A:-1 D:1 0
+    private float moveY; //control vertical movement  S:-1 W:1 0 
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (Input.GetAxisRaw("Horizontal")!=0 || Input.GetAxisRaw("Vertical")!=0) && Time.time - lastBlinkTime >=blinkCooldown && !isflashing) // 检测是否按下空格键
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveY = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space) && (moveX !=0  || moveY !=0) && Time.time - lastBlinkTime >=blinkCooldown && !isflashing) // 检测是否按下空格键
         {
             flash();
             lastBlinkTime = Time.time; // 更新上次闪现时间
@@ -32,9 +37,6 @@ public class BlinkMovement : MonoBehaviour
     void move()
     {
         // 在角色当前朝向的方向上移动一段距离
-        float moveX = Input.GetAxisRaw("Horizontal"); //control horizontal movement  A:-1 D:1 0
-        float moveY = Input.GetAxisRaw("Vertical"); //control vertical movement  S:-1 W:1 0
-
         Vector2 blinkDirection = new Vector2(moveX, moveY) * blinkDistance;
         transform.position = new Vector2(transform.position.x, transform.position.y) + blinkDirection;
 
