@@ -33,6 +33,10 @@ public class RTChatSample : MonoBehaviour
     /// 发送信息按钮
     /// </summary>
     [SerializeField] private Button m_CommitMsgBtn;
+    /// <summary>
+    /// Boss
+    /// </summary>
+    [SerializeField] private BossScript m_Boss;
 
     #endregion
 
@@ -153,7 +157,7 @@ public class RTChatSample : MonoBehaviour
         if (!m_IsVoiceMode || m_ChatSettings.m_TextToSpeech == null)
         {
             //开始逐个显示返回的文本
-            StartTypeWords(_response);
+            StartTypeWords(m_HatredResponse);
             return;
         }
 
@@ -183,6 +187,8 @@ public class RTChatSample : MonoBehaviour
 
             // 提取文本部分
             m_HatredResponse = match.Groups[2].Value.Trim();
+
+            m_Boss.SetRage(m_CurrentHatred * 10f);
         }
         
     }
@@ -276,7 +282,7 @@ public class RTChatSample : MonoBehaviour
     {
         if (_msg == "")
             return;
-        if (m_TextBack) {
+        if (m_TextBack == null) {
             return;
         }
 
@@ -289,6 +295,7 @@ public class RTChatSample : MonoBehaviour
         int currentPos = 0;
         while (m_WriteState)
         {
+            Debug.Log("Waiting");
             yield return new WaitForSeconds(m_WordWaitTime);
             currentPos++;
             //更新显示的内容

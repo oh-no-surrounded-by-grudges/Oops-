@@ -139,10 +139,10 @@ public class RTSpeechHandler : MonoBehaviour
                 m_SilenceTimer = 0.0f; // 重置静默计时器
 
                 //启动关键词唤醒监听
-                if (!m_AwakeState&&!m_ListeningState)
-                {
-                    StartVoiceListening();
-                }
+                // if (!m_AwakeState&&!m_ListeningState)
+                // {
+                //     StartVoiceListening();
+                // }
                 //已唤醒，启动录制
                 if (m_AwakeState&&!m_IsRecording)
                 {
@@ -159,10 +159,10 @@ public class RTSpeechHandler : MonoBehaviour
                 }
                
                 //结束唤醒词监听
-                if (m_ListeningState&&!m_AwakeState && m_SilenceTimer >= m_RecordingTimeLimit)
-                {
-                    StopVoiceListening();
-                }
+                // if (m_ListeningState&&!m_AwakeState && m_SilenceTimer >= m_RecordingTimeLimit)
+                // {
+                //     StopVoiceListening();
+                // }
 
                 //唤醒状态，结束说话
                 if (m_AwakeState&&m_IsRecording && m_SilenceTimer >= m_RecordingTimeLimit)
