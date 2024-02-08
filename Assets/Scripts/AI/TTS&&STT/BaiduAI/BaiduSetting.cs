@@ -54,6 +54,10 @@ public class BaiduSettings : MonoBehaviour
     /// <returns></returns>
     private IEnumerator GetToken(System.Action<string> _callback)
     {
+        if (string.IsNullOrEmpty(AIManager.Instance.baiduSttApiKey) || string.IsNullOrEmpty(AIManager.Instance.baiduSttSecretKey) || string.IsNullOrEmpty(m_AuthorizeURL))
+        {
+            yield break;
+        }
         //获取token的api地址
         string _token_url = string.Format(m_AuthorizeURL + "?client_id={0}&client_secret={1}&grant_type=client_credentials"
             , AIManager.Instance.baiduSttApiKey, AIManager.Instance.baiduSttSecretKey);

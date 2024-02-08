@@ -7078,7 +7078,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openaiUrl: https://api.link-ai.chat/v1/chat/completions
   openaiKey: Link_xfPuDOMfOnKON3ENZvj1LXdk5DAR5uhyJLZD6olPTV
-  baiduSttAuthorizeUrl: https://aip.baidubce.com/oauth/2.0/token
   baiduSttApiKey: U6AgdQS5CfwOOvOXoeKqot4q
   baiduSttSecretKey: QzKGyu4ThilauZU6UkIZViTUsZdBTwNv
 --- !u!1 &1542705749
@@ -7702,6 +7701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105664018}
   - component: {fileID: 2105664017}
+  - component: {fileID: 2105664019}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -7738,6 +7738,50 @@ Transform:
   - {fileID: 51775314}
   m_Father: {fileID: 1266235322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &2105664019
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105664016}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -36.681496, y: -20.872164}
+  - {x: 36.999146, y: -20.859009}
+  - {x: 36.978786, y: 39.07189}
+  - {x: -36.517616, y: 39.122063}
+  - {x: -36.473434, y: -21.029268}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &2113884467
 GameObject:
   m_ObjectHideFlags: 0
