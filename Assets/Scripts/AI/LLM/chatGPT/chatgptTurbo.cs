@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class chatgptTurbo : LLM
 {
@@ -14,6 +15,7 @@ public class chatgptTurbo : LLM
     /// gpt-3.5-turbo
     /// </summary>
     public string m_gptModel = "gpt-3.5-turbo";
+    public Text responseText;
 
     private void Start()
     {
@@ -71,17 +73,22 @@ public class chatgptTurbo : LLM
                     m_DataList.Add(new SendData("assistant", _backMsg));
                     _callback(_backMsg);
                 }
-
+            }
+            else if (request.result == UnityWebRequest.Result.ConnectionError)
+            {
+                responseText.text = "网络错误：" + request.error;
+            }
+            else if (request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                responseText.text = "网络错误：" + request.error;
             }
             else
             {
-                string _msgBack = request.downloadHandler.text;
-                Debug.LogError("错误码：" + request.responseCode);
-                Debug.LogError(_msgBack);
+                responseText.text = "网络错误：" + request.error;
             }
 
             stopwatch.Stop();
-            Debug.Log("chatgpt花费的时间"+ stopwatch.Elapsed.TotalSeconds);
+            Debug.Log("chatgpt花费的时间" + stopwatch.Elapsed.TotalSeconds);
         }
     }
 
@@ -90,7 +97,7 @@ public class chatgptTurbo : LLM
     [Serializable]
     public class PostData
     {
-        [SerializeField]public string model;
+        [SerializeField] public string model;
         [SerializeField] public List<SendData> messages;
         [SerializeField] public float temperature = 0.7f;
     }

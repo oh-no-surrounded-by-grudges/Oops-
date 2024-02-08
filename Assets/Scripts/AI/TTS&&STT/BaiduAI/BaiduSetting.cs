@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class BaiduSettings : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class BaiduSettings : MonoBehaviour
     /// <summary>
     /// 获取Token的地址
     /// </summary>
-    [SerializeField] private string m_AuthorizeURL = "https://aip.baidubce.com/oauth/2.0/token";
+    private string m_AuthorizeURL = "https://aip.baidubce.com/oauth/2.0/token";
+    public Text responseText;
     #endregion
 
 
@@ -34,7 +36,7 @@ public class BaiduSettings : MonoBehaviour
         {
             StartCoroutine(GetToken(GetTokenAction));
         }
-      
+
     }
 
 
@@ -73,7 +75,18 @@ public class BaiduSettings : MonoBehaviour
                 TokenInfo _textback = JsonUtility.FromJson<TokenInfo>(_msg);
                 string _token = _textback.access_token;
                 _callback(_token);
-
+            }
+            else if (request.result == UnityWebRequest.Result.ConnectionError)
+            {
+                responseText.text = "网络错误：" + request.error;
+            }
+            else if (request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                responseText.text = "网络错误：" + request.error;
+            }
+            else
+            {
+                responseText.text = "未知错误：" + request.error;
             }
         }
     }

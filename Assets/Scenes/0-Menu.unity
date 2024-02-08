@@ -414,10 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894df7e08a7e6b94185d521bb30ca544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openaiUrl: 
-  openaiKey: 
-  baiduSttApiKey: 
-  baiduSttSecretKey: 
 --- !u!1 &181579209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,6 +3494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: defd635c5e03ab547b6373174b625ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingPanel: {fileID: 1897734700}
+  mainPanel: {fileID: 621407587}
 --- !u!1 &1377117254
 GameObject:
   m_ObjectHideFlags: 0

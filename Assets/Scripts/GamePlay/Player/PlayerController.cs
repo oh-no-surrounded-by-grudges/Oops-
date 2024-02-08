@@ -108,4 +108,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(blinkCooldown);
         isflashing = false;
     }
+
+    public bool IsAlive()
+    {
+        return currentHealth > 0;
+    }
 }

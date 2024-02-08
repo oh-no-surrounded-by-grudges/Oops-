@@ -6844,7 +6844,7 @@ MonoBehaviour:
   m_Client_secret: 
   m_GetTokenFromServer: 1
   m_Token: 
-  m_AuthorizeURL: https://aip.baidubce.com/oauth/2.0/token
+  responseText: {fileID: 0}
 --- !u!4 &1477505106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5703239628505467386, guid: 9fabad1a61a06284a9ae7bbd518dd7c8, type: 3}
@@ -6884,7 +6884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  target: {fileID: 1088174847}
+  player: {fileID: 0}
+  responseText: {fileID: 1196886502}
 --- !u!61 &1504288693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7055,7 +7056,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541501347}
-  - component: {fileID: 1541501348}
   m_Layer: 0
   m_Name: AI Manager
   m_TagString: Untagged
@@ -7079,18 +7079,6 @@ Transform:
   - {fileID: 2113884468}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1541501348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541501346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894df7e08a7e6b94185d521bb30ca544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1542705749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7190,7 +7178,7 @@ MonoBehaviour:
   m_Client_secret: 
   m_GetTokenFromServer: 1
   m_Token: 
-  m_AuthorizeURL: 
+  responseText: {fileID: 1196886502}
 --- !u!1001 &1618523832
 PrefabInstance:
   m_ObjectHideFlags: 0

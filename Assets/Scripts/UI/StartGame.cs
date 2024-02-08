@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-    public void GoToFirstScene() {
+    public GameObject settingPanel;
+    public GameObject mainPanel;
+    public void GoToFirstScene()
+    {
+        if (string.IsNullOrEmpty(AiData.Instance.openaiUrl) || string.IsNullOrEmpty(AiData.Instance.openaiKey) 
+        || string.IsNullOrEmpty(AiData.Instance.baiduSttApiKey) || string.IsNullOrEmpty(AiData.Instance.baiduSttSecretKey))
+        {
+            settingPanel.SetActive(true);
+            mainPanel.SetActive(false);
+            return;
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene("1-Takeout");
     }
 }

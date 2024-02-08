@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour, IRageListener
 {
     public int speed = 1;
-    public Transform target;
+    public PlayerController player;
     private Rigidbody2D rbody;
+    private bool isCalmDown = false;
+    public Text responseText;
     void Awake() {
         // 注册到RageManager
         RageManager.Instance.AddRageListener(this);
@@ -15,9 +19,9 @@ public class BossController : MonoBehaviour, IRageListener
 
     void FixedUpdate()
     {
-        if (target != null)
+        if (player != null && player.IsAlive() && !isCalmDown)
         {
-            Vector3 position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector3 position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             rbody.MovePosition(position); 
         }
     }
@@ -32,5 +36,17 @@ public class BossController : MonoBehaviour, IRageListener
         {
             speed = 1;
         }
+        
+        if (rageValue <= 20f) {
+            isCalmDown = true;
+            responseText.text = "谢谢你！我现在冷静下来了！";
+            StartCoroutine(WaitAndBackToMenu());
+        }
+    }
+
+    private IEnumerator WaitAndBackToMenu()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("0-Menu");
     }
 }
