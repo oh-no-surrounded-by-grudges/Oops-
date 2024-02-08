@@ -1764,7 +1764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2, y: 1.6999998}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812781377
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: d4b0ca89ef005eb479e68376c7d04a15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1819,7 +1819,6 @@ GameObject:
   - component: {fileID: 1088174850}
   - component: {fileID: 1088174851}
   - component: {fileID: 1088174852}
-  - component: {fileID: 1088174853}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1857,6 +1856,9 @@ MonoBehaviour:
   speed: 5
   m_ChatHandler: {fileID: 2113884469}
   m_TextBack: {fileID: 1196886502}
+  animator: {fileID: 1088174852}
+  blinkDistance: 5
+  blinkCooldown: 0.5
 --- !u!212 &1088174849
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2002,21 +2004,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1088174853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088174846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edc8f75e3c6e56342aa0616a3c87ac26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1088174852}
-  blinkDistance: 5
-  blinkCooldown: 1
 --- !u!1001 &1095776922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6876,6 +6863,7 @@ GameObject:
   - component: {fileID: 1504288693}
   - component: {fileID: 1504288692}
   - component: {fileID: 1504288696}
+  - component: {fileID: 1504288697}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -6895,7 +6883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028c6ec294f527c4f8c8235c2da1e44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
   target: {fileID: 1088174847}
 --- !u!61 &1504288693
 BoxCollider2D:
@@ -7031,6 +7019,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &1504288697
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504288691}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1541501346
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,10 +7091,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894df7e08a7e6b94185d521bb30ca544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openaiUrl: https://api.link-ai.chat/v1/chat/completions
-  openaiKey: Link_xfPuDOMfOnKON3ENZvj1LXdk5DAR5uhyJLZD6olPTV
-  baiduSttApiKey: U6AgdQS5CfwOOvOXoeKqot4q
-  baiduSttSecretKey: QzKGyu4ThilauZU6UkIZViTUsZdBTwNv
 --- !u!1 &1542705749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7924,8 +7935,8 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}

@@ -72,6 +72,7 @@ public class RageManager : MonoBehaviour
         if (!rageListeners.Contains(listener))
         {
             rageListeners.Add(listener);
+            listener.OnRageEvent(rageValue);
         }
     }
 

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour, IRageListener
 {
-    public int speed = 5;
+    public int speed = 1;
     public Transform target;
+    private Rigidbody2D rbody;
     void Awake() {
         // 注册到RageManager
         RageManager.Instance.AddRageListener(this);
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
         if (target != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector3 position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            rbody.MovePosition(position); 
         }
     }
 
@@ -23,11 +26,11 @@ public class BossController : MonoBehaviour, IRageListener
     {
         if (rageValue > 50f)
         {
-            speed = 10;
+            speed = 2;
         }
         else
         {
-            speed = 5;
+            speed = 1;
         }
     }
 }

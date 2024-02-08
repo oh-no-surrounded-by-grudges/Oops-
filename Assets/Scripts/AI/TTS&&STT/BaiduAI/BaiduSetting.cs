@@ -54,13 +54,14 @@ public class BaiduSettings : MonoBehaviour
     /// <returns></returns>
     private IEnumerator GetToken(System.Action<string> _callback)
     {
-        if (string.IsNullOrEmpty(AIManager.Instance.baiduSttApiKey) || string.IsNullOrEmpty(AIManager.Instance.baiduSttSecretKey) || string.IsNullOrEmpty(m_AuthorizeURL))
+        if (string.IsNullOrEmpty(AiData.Instance.baiduSttApiKey) || string.IsNullOrEmpty(AiData.Instance.baiduSttSecretKey) || string.IsNullOrEmpty(m_AuthorizeURL))
         {
+            Debug.LogWarning("API Key or Secret Key or AuthorizeURL is null");
             yield break;
         }
         //获取token的api地址
         string _token_url = string.Format(m_AuthorizeURL + "?client_id={0}&client_secret={1}&grant_type=client_credentials"
-            , AIManager.Instance.baiduSttApiKey, AIManager.Instance.baiduSttSecretKey);
+            , AiData.Instance.baiduSttApiKey, AiData.Instance.baiduSttSecretKey);
 
         using (UnityWebRequest request = new UnityWebRequest(_token_url, "POST"))
         {

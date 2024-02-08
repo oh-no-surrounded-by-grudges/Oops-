@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
     private float invincibleTime = 2f;
     private float invincibleTimer = 0;
 
+    public Animator animator; // 确保在Unity编辑器中将你的角色的Animator组件拖拽到这个字段上
+    public float blinkDistance = 5f; // 闪现距离
+    public float blinkCooldown = 0.5f;
+    private bool isflashing;
+    private float moveX; //control horizontal movement  A:-1 D:1 0
+    private float moveY; //control vertical movement  S:-1 W:1 0 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +38,30 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float moveX = Input.GetAxisRaw("Horizontal"); //control horizontal movement  A:-1 D:1 0
-        float moveY = Input.GetAxisRaw("Vertical"); //control vertical movement  S:-1 W:1 0
+        if (currentHealth == 0) return;
 
-        Vector2 position = rbody.position;
-        position.x += moveX * speed * Time.fixedDeltaTime;
-        position.y += moveY * speed * Time.fixedDeltaTime;
-        rbody.MovePosition(position);
+        moveX = Input.GetAxisRaw("Horizontal"); //control horizontal movement  A:-1 D:1 0
+        moveY = Input.GetAxisRaw("Vertical"); //control vertical movement  S:-1 W:1 0
 
-        if (isInvincible)
+        if (Input.GetKeyDown(KeyCode.Space) && (moveX != 0 || moveY != 0) && !isflashing)
         {
-            invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer < 0) isInvincible = false;
+            flash();
+        }
+
+        if (!isflashing)
+        {
+            Vector2 position = rbody.position;
+            position.x += moveX * speed * Time.fixedDeltaTime;
+            position.y += moveY * speed * Time.fixedDeltaTime;
+            rbody.MovePosition(position);
+
+            if (isInvincible)
+            {
+                invincibleTimer -= Time.deltaTime;
+                if (invincibleTimer < 0) isInvincible = false;
+            }
         }
     }
 
@@ -57,13 +74,38 @@ public class PlayerController : MonoBehaviour
             invincibleTimer = invincibleTime;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        if(currentHealth == 0)
+        if (currentHealth == 0)
         {
-            Destroy(gameObject);
             m_TextBack.text = "你死了!";
-            m_ChatHandler.StopConversation();            
+            m_ChatHandler.StopConversation();
+            StartCoroutine(WaitAndBackToMenu());
         }
     }
+
+    private IEnumerator WaitAndBackToMenu()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("0-Menu");
+    }
+
+    void flash()
+    {
+        Debug.Log("flash");
+        isflashing = true;
+        animator.SetTrigger("flash");
+    }
+
+    public void move()
+    {
+        Vector2 blinkDirection = new Vector2(moveX, moveY) * blinkDistance;
+        Physics.SyncTransforms();  // 使用Physics.SyncTransforms()来同步物理更新
+        rbody.MovePosition(rbody.position + blinkDirection);
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(blinkCooldown);
+        isflashing = false;
+    }
 }
-
-

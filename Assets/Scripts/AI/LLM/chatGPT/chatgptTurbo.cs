@@ -38,7 +38,7 @@ public class chatgptTurbo : LLM
     public override IEnumerator Request(string _postWord, System.Action<string> _callback)
     {
         stopwatch.Restart();
-        using (UnityWebRequest request = new UnityWebRequest(AIManager.Instance.openaiUrl, "POST"))
+        using (UnityWebRequest request = new UnityWebRequest(AiData.Instance.openaiUrl, "POST"))
         {
             PostData _postData = new PostData
             {
@@ -54,7 +54,7 @@ public class chatgptTurbo : LLM
             request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
 
             request.SetRequestHeader("Content-Type", "application/json");
-            request.SetRequestHeader("Authorization", string.Format("Bearer {0}", AIManager.Instance.openaiKey));
+            request.SetRequestHeader("Authorization", string.Format("Bearer {0}", AiData.Instance.openaiKey));
             Debug.Log("url: " + request.url);
             Debug.Log("method: " + request.method);
 

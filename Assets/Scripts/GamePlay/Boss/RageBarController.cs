@@ -21,6 +21,6 @@ public class RageBarController : MonoBehaviour, IRageListener
     // 更新进度条的值
     private void UpdateRageBar(float value)
     {
-        rageSlider.value = value;
+        rageSlider.value = value / 100;
     }
 }

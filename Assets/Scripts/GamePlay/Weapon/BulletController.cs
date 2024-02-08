@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour, IRageListener
 {
-    Rigidbody2D rbody;
     public float rotationSpeed = 25f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rbody = GetComponent<Rigidbody2D>();
-    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rbody.MoveRotation(rbody.rotation + rotationSpeed * Time.fixedDeltaTime);
+        transform.Rotate(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotationSpeed * Time.fixedDeltaTime));
     }
 
     void OnTriggerStay2D(Collider2D other)
