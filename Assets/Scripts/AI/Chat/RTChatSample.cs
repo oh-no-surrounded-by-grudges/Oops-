@@ -33,11 +33,6 @@ public class RTChatSample : MonoBehaviour
     /// 发送信息按钮
     /// </summary>
     [SerializeField] private Button m_CommitMsgBtn;
-    /// <summary>
-    /// Boss
-    /// </summary>
-    [SerializeField] private BossController m_Boss;
-
     #endregion
 
     #region 参数定义
@@ -188,7 +183,7 @@ public class RTChatSample : MonoBehaviour
             // 提取文本部分
             m_HatredResponse = match.Groups[2].Value.Trim();
 
-            m_Boss.SetRage(m_CurrentHatred * 10f);
+            RageManager.Instance.SetRage(m_CurrentHatred * 10f);
         }
         
     }

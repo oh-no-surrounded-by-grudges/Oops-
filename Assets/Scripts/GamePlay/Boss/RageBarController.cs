@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
-public class RageBarController : MonoBehaviour
+public class RageBarController : MonoBehaviour, IRageListener
 {
-    public BossController boss; // 引用Boss脚本
-    private Slider rageSlider; // 引用UI滑动条
-
-    private void Start()
+    private Slider rageSlider;
+    private void Awake()
     {
         rageSlider = GetComponent<Slider>();
-        if (boss != null)
-        {
-            UpdateRageBar(boss.GetCurrentRagePercent()); // 初始化怒气条
-            boss.onRageChanged += UpdateRageBar; // 订阅怒气值变化事件
-        }
+        // 注册到RageManager
+        RageManager.Instance.AddRageListener(this);
+    }
+
+    public void OnRageEvent(float rageValue)
+    {
+        UpdateRageBar(rageValue);
     }
 
     // 更新进度条的值
