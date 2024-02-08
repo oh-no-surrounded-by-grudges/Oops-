@@ -20,7 +20,7 @@
 
 百度语音识别新注册用户可以领取充足的免费额度，请访问：[百度AI开放平台 (baidu.com)](https://ai.baidu.com/tech/speech)。之后需要创建一个应用，然后将 API Key 和 Secret Key 填入即可。
 
-国内 OpenAI 代理我使用的服务是 https://link-ai.tech/，登录也可以领取充足的免费额度，将该网站的 API 链接（）和 API Key 填入即可。
+国内 OpenAI 代理我使用的服务是 [Link-AI](https://link-ai.tech/)，登录也可以领取充足的免费额度，将该网站的 API 链接（）和 API Key 填入即可。
 
 我的 API 设置如下（有效期至本课程出成绩，但也可能被提前用完额度，请助教自行申请 API hhh）：
 
