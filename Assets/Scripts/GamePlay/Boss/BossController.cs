@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 // BossScript.cs
 using UnityEngine;
-public class BossScript : MonoBehaviour
+public class BossController : MonoBehaviour
 {
     public float maxRage = 100f; // 怒气值最大值
     private float currentRage = 60f; // 当前怒气值

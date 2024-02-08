@@ -36,7 +36,7 @@ public class RTChatSample : MonoBehaviour
     /// <summary>
     /// Boss
     /// </summary>
-    [SerializeField] private BossScript m_Boss;
+    [SerializeField] private BossController m_Boss;
 
     #endregion
 

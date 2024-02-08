@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
-public class RageBarScript : MonoBehaviour
+public class RageBarController : MonoBehaviour
 {
-    public BossScript boss; // 引用Boss脚本
+    public BossController boss; // 引用Boss脚本
     private Slider rageSlider; // 引用UI滑动条
 
     private void Start()
