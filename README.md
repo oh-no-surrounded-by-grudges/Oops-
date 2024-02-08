@@ -8,13 +8,13 @@
 
 ### 主界面
 
-![image-20240208222633722](.\Docs\README\image-20240208222633722.png)
+![image-20240208222633722](./Docs/README/image-20240208222633722.png)
 
 主界面分为三个按钮：开始游戏 Start、退出游戏 Exit 和设置 Setting，初次游戏需要进行设置，如果直接点击开始也会自动跳转到设置界面。
 
 ### 设置 API
 
-![image-20240208222829510](.\Docs\README\image-20240208222829510.png)
+![image-20240208222829510](./Docs/README/image-20240208222829510.png)
 
 需要设置百度语音识别的 API 和 OpenAI ChatGPT 3.5 的 API，注意百度语音识别必须使用国内网络，所以后者接口也需要使用国内代理服务或者支持 OpenAI 接口格式的国内 LLM 服务。
 
@@ -33,7 +33,7 @@ Baidu Secret: QzKGyu4ThilauZU6UkIZViTUsZdBTwNv
 
 ### 游戏界面与操作
 
-![image-20240208224150165](.\Docs\README\image-20240208224150165.png)
+![image-20240208224150165](./Docs/README/image-20240208224150165.png)
 
 主人公通过方向键控制，在行走过程中可以按空格键闪现，闪现后有一段时间硬直。
 
