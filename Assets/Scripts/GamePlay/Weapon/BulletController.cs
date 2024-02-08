@@ -23,7 +23,7 @@ public class BulletController : MonoBehaviour, IRageListener
         PlayerController pc = other.GetComponent<PlayerController>();
         if (pc != null)
         {
-            // pc.ChangeHealth(-1);
+            pc.ChangeHealth(-1);
         }
     }
 

@@ -6,16 +6,6 @@ using UnityEngine.Networking;
 
 public class chatgptTurbo : LLM
 {
-    public chatgptTurbo()
-    {
-        // url = "https://api.openai.com/v1/chat/completions";
-        url = "https://api.link-ai.chat/v1/chat/completions";
-    }
-
-    /// <summary>
-    /// api key
-    /// </summary>
-    [SerializeField] private string api_key;
     /// <summary>
     /// 系统 Prompt
     /// </summary>
@@ -24,7 +14,6 @@ public class chatgptTurbo : LLM
     /// gpt-3.5-turbo
     /// </summary>
     public string m_gptModel = "gpt-3.5-turbo";
-
 
     private void Start()
     {
@@ -49,7 +38,7 @@ public class chatgptTurbo : LLM
     public override IEnumerator Request(string _postWord, System.Action<string> _callback)
     {
         stopwatch.Restart();
-        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        using (UnityWebRequest request = new UnityWebRequest(AIManager.Instance.openaiUrl, "POST"))
         {
             PostData _postData = new PostData
             {
@@ -65,7 +54,7 @@ public class chatgptTurbo : LLM
             request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
 
             request.SetRequestHeader("Content-Type", "application/json");
-            request.SetRequestHeader("Authorization", string.Format("Bearer {0}", api_key));
+            request.SetRequestHeader("Authorization", string.Format("Bearer {0}", AIManager.Instance.openaiKey));
             Debug.Log("url: " + request.url);
             Debug.Log("method: " + request.method);
 

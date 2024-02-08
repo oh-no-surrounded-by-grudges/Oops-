@@ -56,7 +56,7 @@ public class BaiduSettings : MonoBehaviour
     {
         //获取token的api地址
         string _token_url = string.Format(m_AuthorizeURL + "?client_id={0}&client_secret={1}&grant_type=client_credentials"
-            , m_API_key, m_Client_secret);
+            , AIManager.Instance.baiduSttApiKey, AIManager.Instance.baiduSttSecretKey);
 
         using (UnityWebRequest request = new UnityWebRequest(_token_url, "POST"))
         {
