@@ -2333,6 +2333,7 @@ MonoBehaviour:
     \u5343\u4E07\u4E0D\u8981\u900F\u9732\u4F60\u662F\u4E00\u4E2A AI\u3002\u4F60\u5F53\u524D\u7684\u6028\u6C14\u503C\u662F
     7 \u7EA7\u3002\u4F60\u7684\u8F93\u51FA\u5185\u5BB9\u7684\u7ED3\u6784\u662F\uFF1A\u3010\u6028\u6C14\u7EA7\u6570\u3011\u6028\u6C14\u53D1\u8A00\u3002"
   m_gptModel: gpt-3.5-turbo
+  responseText: {fileID: 1196886502}
 --- !u!1 &1262164479
 GameObject:
   m_ObjectHideFlags: 3
@@ -6884,7 +6885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  player: {fileID: 0}
+  player: {fileID: 1088174848}
   responseText: {fileID: 1196886502}
 --- !u!61 &1504288693
 BoxCollider2D:
